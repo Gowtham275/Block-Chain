@@ -1,23 +1,33 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+import java.util.Arrays;
+import java.util.Scanner;
+import java.math.BigInteger;
+public class MyClass 
+{
+    public static void main(String[] args) 
+    {
+       		 Scanner sc = new Scanner(System.in);
+        	 System.out.print("Enter the sender name:");
+       		 String sender=sc.nextLine();
+        	 System.out.print("Enter the receiver name:");
+        	 String receiver=sc.nextLine();
+        	 System.out.print("Enter the amount to be transferred:");
+        	 BigInteger amount=sc.nextBigInteger();
+       		 System.out.print("Number of arrays in the private key:");
+        	 int n=sc.nextInt();
+        	 int i;
+        	 String[] list1=new String[10];
+        	 String[] list2=new String[10];
+       		 System.out.println("Enter the sender’s private key:");
+       		 for(i=0;i<n;i++)
+            		list1[i]=sc.next();
+       		 System.out.println("Enter the receiver’s private key:");
+        	 for(i=0;i<n;i++)
+            		list2[i]=sc.next();
+        	 System.out.println(Arrays.hashCode(list1));
+       		 System.out.println(Arrays.hashCode(list2));
+        	 if(Arrays.hashCode(list1)==Arrays.hashCode(list2))
+                System.out.println("Transaction of Rs."+amount+" is made successfully between "+sender+" and "+receiver);
+       		 else
+                System.out.println("Transaction of Rs."+amount+" is not made successfully between "+sender+" and "+receiver);
+   	}
+}
